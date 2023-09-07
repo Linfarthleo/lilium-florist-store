@@ -11,6 +11,7 @@ import { NosotrosComponent } from './pantallas/nosotros/nosotros.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductListComponent } from './productos/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InicioComponent,
     NosotrosComponent,
     CabeceraComponent,
-    PiePaginaComponent
+    PiePaginaComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
