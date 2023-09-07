@@ -10,6 +10,7 @@ import { InicioComponent } from './pantallas/inicio/inicio.component';
 import { NosotrosComponent } from './pantallas/nosotros/nosotros.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
