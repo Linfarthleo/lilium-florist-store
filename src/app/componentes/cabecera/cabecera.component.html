@@ -1,37 +1,18 @@
-<header class="bg-black py-0 px-2">
-  <div class="d-flex justify-content-end py-0">
-    <mat-card-actions>
-      <a href="../login/"><button class="my-0" mat-raised-button>LOGIN</button></a>
-    </mat-card-actions>
-  </div>
-  <a>
-    <h1 class="text-center title">Lilium Florist</h1>
-  </a>
-  <div class="mx-auto" style="width: 940px; height: 0px; border: 0.50px white solid"></div>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-black p-0">
-    <div class="container-fluid bg-black ">
-
-      <button class="navbar-toggler btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="text-light navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link text-light"  routerLink="/inicio">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" routerLink="/catalogo">Catálogo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" routerLink="/nosotros">Nosotros</a>
-          </li>
-
-          <li class="nav-item">
-              <a class="nav-link" routerLink="/carrito"><fa-icon [icon]="carrito" [style.color]="'#ffffff'"></fa-icon></a>
-          </li>
-        </ul>
-      </div>
+  <header class="bg-black py-0 px-2">
+    <div class="d-flex justify-content-end py-0">
+      <mat-card-actions>
+        <a routerLink="/login"><button class=" my-0" mat-raised-button color="primary" *ngIf="!isUserLogged()">LOGIN</button></a>
+        <a href=""><button class=" my-0" mat-raised-button color="accent" *ngIf="isUserLogged()" (click)="logout()">LOGOUT</button></a>
+      </mat-card-actions>
     </div>
-  </nav>
-</header>
+    <a>
+      <h1 class="text-center title">Lilium Florist</h1>
+    </a>
+    <div class="mx-auto" style="width: 940px; height: 0px; border: 0.50px white solid"></div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-black p-0">
+      <div class="container-fluid bg-black ">
+
+        <button class="navbar-toggler btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      </div>
+    </nav>
+  </header>

@@ -8,7 +8,6 @@ import { LoginComponent } from './componentes/login/login.component';
 import { DetalleComponent } from './pantallas/detalle/detalle.component';
 import {CarritoComponent} from "./pantallas/carrito/carrito.component";
 
-
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'inicio', component: InicioComponent },
