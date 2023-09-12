@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ProductService} from "../../services/product.service";
 
 @Component({
   selector: 'app-product-list',
@@ -6,21 +7,18 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
- /* pokemonIds: string[];
+  productIds!: string[];
 
-  constructor(private productService: PokemonService) {}
-*/
+  constructor(private productService: ProductService) {}
+
   ngOnInit(): void {
-    /*
-    this.pokemonService.getPokemonList().subscribe({
+    this.productService.getProductList().subscribe({
       next: (data) => {
-        this.pokemonIds = [];
+        this.productIds = [];
         data.results.forEach((item: any) => {
-          this.pokemonIds.push(item.url.slice(0, -1).split('/').pop());
+          this.productIds.push(item.url.slice(0, -1).split('/').pop());
         });
       },
     });
-    */
   }
-  
 }

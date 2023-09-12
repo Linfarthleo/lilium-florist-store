@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './componentes/login/login.component';
 import { CarritoComponent } from './pantallas/carrito/carrito.component';
 import { CatalogoComponent } from './pantallas/catalogo/catalogo.component';
 import { DetalleComponent } from './pantallas/detalle/detalle.component';
@@ -12,14 +13,14 @@ import { NosotrosComponent } from './pantallas/nosotros/nosotros.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductListComponent } from './products/product-list/product-list.component';
-import { LoginComponent } from './componentes/login/login.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {ProductsModule} from "./products/products.module";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,6 @@ import { HttpClientModule } from '@angular/common/http';
     NosotrosComponent,
     CabeceraComponent,
     PiePaginaComponent,
-    ProductListComponent,
     LoginComponent
   ],
   imports: [
@@ -45,7 +45,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatGridListModule,
+    ProductsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
