@@ -1,13 +1,13 @@
 <mat-card class="post-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="assets/flores/image_2023-09-07_160942509.png" alt="Photo of a Shiba Inu">
+  <img mat-card-image [src]="imageSrc" alt="Photo">
   <mat-card-content>
     <p>
-      Este tipo de flor es muy bonita y se encuentra en la zona de la sierra de Oaxaca.
+      {{ content }}
     </p>
   </mat-card-content>
   <mat-card-actions>
