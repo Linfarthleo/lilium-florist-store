@@ -3,7 +3,7 @@
         <div class="shopping-cart-area">
             <div class="bag-details">
                 <div>
-                    <p>MY SHOPPING BAG ({{cartContainer?.data?.products?.length}} ITEMS)</p>
+                    <p>Carrito de Compras ({{cartContainer?.data?.products?.length}} ITEMS)</p>
                 </div>
                 <div>
                     <p>TOTAL: {{symbol+' '+totalPrice}}</p>
@@ -53,10 +53,7 @@
                     </div>
                     <div class="shopping-action-area">
                         <div class="rmv-btn">
-                            REMOVE
-                        </div>
-                        <div class="move-to-wishlist">
-                            MOVE TO WISHLIST
+                            QUITAR
                         </div>
                     </div>
                 </div>
@@ -81,11 +78,11 @@
                 </div>
             </div>
             <div class="price-details">
-                <H4 class="brand-heading-font">PRICE DETAILS</H4>
+                <H4 class="brand-heading-font">Detalles de precio</H4>
                 <div class="excel-area">
                     <div class="mrp flex-custom pb-4">
                         <div class="mrp-tag text-gray">
-                            <p>Total MRP</p>
+                            <p>Total</p>
                         </div>
                         <div class="mrp-price bold-bright">
                             <p>{{symbol+' '+totalPrice}}</p>
@@ -113,7 +110,7 @@
 
                     <div class="discount flex-custom pb-4">
                         <div class="discount-tag text-gray">
-                            <p>Discount</p>
+                            <p>Descuento</p>
                         </div>
                         <div class="discount-price bold-bright">
                             <p>{{symbol}} 0</p>
@@ -122,7 +119,7 @@
 
                     <div class="shipping flex-custom">
                         <div class="shipping-tag text-gray">
-                            <p>Shipping Charge</p>
+                            <p>Envío</p>
                         </div>
                         <div class="shipping-price bold-bright">
                             <p>{{symbol}} 0</p>
@@ -131,7 +128,7 @@
                 </div>
                 <div class="total-amount flex-custom brand-heading-font">
                     <div class="total-amount-tag">
-                        <p>TOTAL AMOUNT</p>
+                        <p>PRECIO A PAGAR</p>
                     </div>
                     <div class="total-amount-price">
                         <p>{{symbol+' '+totalPrice}}</p>
@@ -154,33 +151,30 @@
     <div class="shopping-cart-area">
         <div class="bag-details">
             <div>
-                <p>MY SHOPPING BAG (2 ITEMS)</p>
+                <p>Carrito de compras (2 ITEMS)</p>
             </div>
             <div>
-                <p>TOTAL: Rs.5,999</p>
+                <p>TOTAL: $25</p>
             </div>
         </div>
         <div class="item-outer" id="style-2">
             <div class="item">
                 <div class="item-desc-container">
                     <div class="item-img">
-                        <img src="../../../assets/media/model1.jpg" height="100px" width="78px" alt="model1" />
+                        <img src="../../../assets/img/imgTulipanes.png" height="100px" width="78px" alt="model1" />
                     </div>
                     <div class="item-details">
                         <div class="desc">
                             <div class="item-title">
-                                <p>INDIE PICKS</p>
+                                <p>Calidad Premium</p>
                             </div>
                             <p class="item-description">
-                                Mustard Casual Cotton Silk Striped Saree with Unstitched Blouse
+                                Hermoso bouquet de tulipanes
                             </p>
                             <div class="qty">Qty: 1</div>
                         </div>
                         <div class="price-tag">
-                            <p>Rs. 1,035</p>
-                            <div class="discount-tag">
-                                <s>₹2,999</s>&nbsp;&nbsp;<span>55% off</span>
-                            </div>
+                            <p>USD 10</p>
                         </div>
                     </div>
                 </div>
@@ -191,7 +185,7 @@
                     <div class="add-on-items">
                         <div class="add-on-item">
                             <div>
-                                <p><span class="add-on-price-tag">Rs. 800</span> Standard Blouse</p>
+                                <p><span class="add-on-price-tag">USD 5</span> Adicional</p>
                             </div>
                             <div class="remove-ico">
                                 <img src="../../../assets/icons/x-circle.svg" alt="remove">
@@ -202,7 +196,7 @@
 
                         <div class="add-on-item">
                             <div>
-                                <p><span class="add-on-price-tag">Rs. 800</span> Standard Petticoat</p>
+                                <p><span class="add-on-price-tag">USD 1</span> Tarjeta Personalizada</p>
                             </div>
                             <div class="remove-ico">
                                 <img src="../../../assets/icons/x-circle.svg" alt="remove">
@@ -213,11 +207,9 @@
                 </div>
                 <div class="shopping-action-area">
                     <div class="rmv-btn">
-                        REMOVE
+                        ELIMINAR
                     </div>
-                    <div class="move-to-wishlist">
-                        MOVE TO WISHLIST
-                    </div>
+
                 </div>
             </div>
 
@@ -225,22 +217,22 @@
             <div class="item">
                 <div class="item-desc-container">
                     <div class="item-img">
-                        <img src="../../../assets/media/model2.PNG" height="100px" width="78px" alt="model2" />
+                        <img src="../../../assets/img/rosas.jpg" height="100px" width="78px" alt="model2" />
                     </div>
                     <div class="item-details">
                         <div class="desc">
                             <div class="item-title">
-                                <p>INDIE PICKS</p>
+                                <p>Calidad Premium</p>
                             </div>
                             <p class="item-description">
-                                Mustard Casual Cotton Silk Striped Saree with Unstitched Blouse
+                                Bouquet de Rosas
                             </p>
                             <div class="qty">Qty: 1</div>
                         </div>
                         <div class="price-tag">
-                            <p>Rs. 1,035</p>
+                            <p>$4</p>
                             <div class="discount-tag">
-                                <s>₹2,999</s>&nbsp;&nbsp;<span>55% off</span>
+                                <s></s>&nbsp;&nbsp;<span>55% off</span>
                             </div>
                         </div>
                     </div>
@@ -252,7 +244,7 @@
                     <div class="add-on-items">
                         <div class="add-on-item">
                             <div>
-                                <p><span class="add-on-price-tag">Rs. 800</span> Standard Blouse</p>
+                                <p><span class="add-on-price-tag">USD 2.50</span> Tarjeta Personalizada</p>
                             </div>
                             <div class="remove-ico">
                                 <img src="../../../assets/icons/x-circle.svg" alt="remove">
@@ -263,7 +255,7 @@
 
                         <div class="add-on-item">
                             <div>
-                                <p><span class="add-on-price-tag">Rs. 800</span> Standard Petticoat</p>
+                                <p><span class="add-on-price-tag">USD 2.50</span> Cinta decoración</p>
                             </div>
                             <div class="remove-ico">
                                 <img src="../../../assets/icons/x-circle.svg" alt="remove">
@@ -274,11 +266,7 @@
                 </div>
                 <div class="shopping-action-area">
                     <div class="rmv-btn">
-                        REMOVE
-                    </div>
-                    <div class="move-to-wishlist">
-                        MOVE TO WISHLIST
-                    </div>
+                        Eliminar
                 </div>
             </div>
         </div>
@@ -287,16 +275,16 @@
     <div class="price-area">
         <div class="coupon-area">
             <div class="coupon-head">
-                <p>COUPONS</p>
+                <p>Cupones</p>
             </div>
             <div class="apply-coupon">
                 <div class="apply-coupon-left">
                     <img src="https://img.icons8.com/ios/50/000000/price-tag--v1.png" width="15px" height="15px" />
-                    <span class="discount-tag-head">APPLY COUPONS</span>
-                    <p class="discount-tag-subhead"><span class="discount-tag-subhead-login">Login</span> to see best coupons for you.</p>
+                    <span class="discount-tag-head">Aplicar cupones</span>
+                    <p class="discount-tag-subhead"><span class="discount-tag-subhead-login">Iniciar sesion</span> para recibir cupones.</p>
                 </div>
                 <div class="apply-coupon-btn cursor-pointer">
-                    APPLY <img width="15px" height="15px" src="../../../assets/icons/arrow-right.svg" />
+                    Aplicar <img width="15px" height="15px" src="../../../assets/icons/arrow-right.svg" />
                 </div>
             </div>
         </div>
@@ -305,19 +293,19 @@
             <div class="excel-area">
                 <div class="mrp flex-custom pb-4">
                     <div class="mrp-tag text-gray">
-                        <p>Total MRP</p>
+                        <p>Total</p>
                     </div>
                     <div class="mrp-price bold-bright">
-                        <p>Rs. 2,299</p>
+                        <p>USD</p>
                     </div>
                 </div>
 
                 <div class="bag-discount flex-custom pb-4">
                     <div class="bag-discount-tag text-gray">
-                        <p>Bag Discount</p>
+                        <p>Descuento</p>
                     </div>
                     <div class="bag-discount-price bold-bright">
-                        <p>- Rs. 800</p>
+                        <p>USD 0</p>
                     </div>
                 </div>
 
@@ -326,7 +314,7 @@
                         <p>Sub Total</p>
                     </div>
                     <div class="subtotal-price bold-bright">
-                        <p>Rs. 2,199</p>
+                        <p>USD 25</p>
 
                     </div>
                 </div>
@@ -336,25 +324,25 @@
                         <p>Discount</p>
                     </div>
                     <div class="discount-price bold-bright">
-                        <p>Rs. 0</p>
+                        <p>USD 0</p>
                     </div>
                 </div>
 
                 <div class="shipping flex-custom">
                     <div class="shipping-tag text-gray">
-                        <p>Shipping Charge</p>
+                        <p>Costo de envío</p>
                     </div>
                     <div class="shipping-price bold-bright">
-                        <p>Rs. 0</p>
+                        <p>USD 0</p>
                     </div>
                 </div>
             </div>
             <div class="total-amount flex-custom brand-heading-font">
                 <div class="total-amount-tag">
-                    <p>TOTAL AMOUNT</p>
+                    <p>TOTAL</p>
                 </div>
                 <div class="total-amount-price">
-                    <p>RS. 2,299</p>
+                    <p>USD 0</p>
                 </div>
             </div>
 
