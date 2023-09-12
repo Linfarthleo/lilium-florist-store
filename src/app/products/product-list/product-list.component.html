@@ -1,0 +1,7 @@
+<mat-grid-list cols="3" rowHeight="500">
+  <mat-grid-tile *ngFor="let id of productIds">
+    <app-product-detail [productDetail]="id"></app-product-detail>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
