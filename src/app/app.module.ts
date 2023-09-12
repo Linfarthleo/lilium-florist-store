@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { initializeApp } from 'firebase/app';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +26,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {ProductsModule} from "./products/products.module";
+import { environment } from 'src/environments/environment';
+
+
+// Inicializa Firebase con la configuración del entorno
+const app = initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -48,6 +58,9 @@ import {ProductsModule} from "./products/products.module";
     FontAwesomeModule,
     MatGridListModule,
     ProductsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
