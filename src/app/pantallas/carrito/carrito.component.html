@@ -1,316 +1,314 @@
-<ng-template #apiData>
-  <section>
-    <div class="shopping-cart-area">
-      <div class="bag-details">
-        <div>
-          <p>CARRITO  DE COMPRAS ({{cartContainer?.data?.products?.length}} ITEMS)</p>
-        </div>
-        <div>
-          <p>TOTAL: {{symbol+' '+totalPrice}}</p>
-        </div>
-      </div>
-      <div class="item-outer" id="scrollbar">
+<div class="container-fluid">
+  <div class="row " style="overflow-y: auto;">
 
-        <div class="item" *ngFor="let product of cartContainer?.data?.products">
-          <div class="item-desc-container">
-            <div class="item-img ">
-              <img
-                [src]="product.photo"
-                class="skeleton"
-                alt="model1"
-              />
+    <ng-template #apiData>
+      <section>
+        <div class="shopping-cart-area">
+          <div class="bag-details">
+            <div>
+              <p>CARRITO DE COMPRAS ({{cartContainer?.data?.products?.length}} ITEMS)</p>
             </div>
-            <div class="item-details">
-              <div class="desc">
-                <div class="item-title">
-                  <p class="uppercase">{{product.brand}}</p>
+            <div>
+              <p>TOTAL: {{symbol+' '+totalPrice}}</p>
+            </div>
+          </div>
+          <div class="item-outer" id="scrollbar">
+            <div class="item" *ngFor="let product of cartContainer?.data?.products">
+              <div class="item-desc-container">
+                <div class="item-img ">
+                  <img [src]="product.photo" class="skeleton" alt="model1" />
                 </div>
-                <p class="item-description">
-                  {{product.title}}
+                <div class="item-details">
+                  <div class="desc">
+                    <div class="item-title">
+                      <p class="uppercase">{{product.brand}}</p>
+                    </div>
+                    <p class="item-description">
+                      {{product.title}}
+                    </p>
+                    <div class="qty">Qty: {{product.quantity}}</div>
+                  </div>
+                  <div class="price-tag">
+                    <p>{{product.symbol}} {{product.base_currency_final_sale_price}}</p>
+                    <div class="discount-tag">
+                      <s>{{product.symbol}}{{product.base_currency_original_sale_price}}</s>&nbsp;&nbsp;<span>{{product.sale_discount}}%
+                        off</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="add-ons" *ngIf="product?.add_ons?.length">
+                <div class="add-on-head">
+                  <p>Add-Ons:</p>
+                </div>
+                <div class="add-on-items">
+                  <div class="add-on-item" *ngFor="let addOn of product?.add_ons">
+                    <div>
+                      <p><span class="add-on-price-tag">{{product.symbol}} {{addOn.base_cost}}</span> {{addOn.name}}</p>
+                    </div>
+                    <div class="remove-ico ">
+                      <img class="cursor-pointer" src="../../../assets/icons/x-circle.svg" alt="remove">
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="shopping-action-area">
+                <div class="rmv-btn">
+                  ELIMINAR
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div>
+
+        </div>
+        <div class="price-area">
+          <div class="coupon-area">
+            <div class="coupon-head">
+              <p>CUPONES</p>
+            </div>
+            <div class="apply-coupon">
+              <div class="apply-coupon-left">
+                <img src="https://img.icons8.com/ios/50/000000/price-tag--v1.png" width="15px" height="15px" />
+                <span class="discount-tag-head">APLICAR CUPONES</span>
+                <p class="discount-tag-subhead"><span class="discount-tag-subhead-login">Login</span> para ver cupones.
                 </p>
-                <div class="qty">Qty: {{product.quantity}}</div>
               </div>
-              <div class="price-tag">
-                <p>{{product.symbol}} {{product.base_currency_final_sale_price}}</p>
-                <div class="discount-tag">
-                  <s>{{product.symbol}}{{product.base_currency_original_sale_price}}</s>&nbsp;&nbsp;<span>{{product.sale_discount}}% off</span>
+              <div class="apply-coupon-btn cursor-pointer">
+                APPLY <img width="15px" height="15px" src="../../../assets/icons/arrow-right.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="price-details">
+            <H4 class="brand-heading-font">DETALLES</H4>
+            <div class="excel-area">
+              <div class="mrp flex-custom pb-4">
+                <div class="mrp-tag text-gray">
+                  <p>Total </p>
+                </div>
+                <div class="mrp-price bold-bright">
+                  <p>{{symbol+' '+totalPrice}}</p>
+                </div>
+              </div>
+
+              <div class="bag-discount flex-custom pb-4">
+                <div class="bag-discount-tag text-gray">
+                  <p>DESCUENTO</p>
+                </div>
+                <div class="bag-discount-price bold-bright">
+                  <p>- {{symbol+' '+ 0}}</p>
+                </div>
+              </div>
+
+              <div class="subtotal flex-custom pb-4">
+                <div class="subtotal-tag text-gray">
+                  <p>Sub Total</p>
+                </div>
+                <div class="subtotal-price bold-bright">
+                  <p>{{symbol+' '+totalPrice}}</p>
+
+                </div>
+              </div>
+
+              <div class="discount flex-custom pb-4">
+                <div class="discount-tag text-gray">
+                  <p>DESCUENTO</p>
+                </div>
+                <div class="discount-price bold-bright">
+                  <p>{{symbol}} 0</p>
+                </div>
+              </div>
+
+              <div class="shipping flex-custom">
+                <div class="shipping-tag text-gray">
+                  <p>COSTO DE ENTREGA</p>
+                </div>
+                <div class="shipping-price bold-bright">
+                  <p>{{symbol}} 0</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="add-ons" *ngIf="product?.add_ons?.length">
-            <div class="add-on-head">
-              <p>Add-Ons:</p>
+            <div class="total-amount flex-custom brand-heading-font">
+              <div class="total-amount-tag">
+                <p>TOTAL</p>
+              </div>
+              <div class="total-amount-price">
+                <p>{{symbol+' '+totalPrice}}</p>
+              </div>
             </div>
-            <div class="add-on-items">
-              <div class="add-on-item" *ngFor="let addOn of product?.add_ons">
-                <div>
-                  <p><span class="add-on-price-tag">{{product.symbol}} {{addOn.base_cost}}</span> {{addOn.name}}</p>
-                </div>
-                <div class="remove-ico ">
-                  <img class="cursor-pointer" src="../../../assets/icons/x-circle.svg" alt="remove">
 
+            <div class="select-address brand-heading-font cursor-pointer">
+              SELECCIONAR DIRECCION
+              <img src="../../../assets/icons/arrow-right-white.svg" width="15px" height="15px" />
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </ng-template>
+
+
+    <section *ngIf="dummyContent;else apiData">
+      <div class="shopping-cart-area">
+        <div class="bag-details">
+          <div>
+            <p>CARRITO DE COMPRAS (2 ITEMS)</p>
+          </div>
+          <div>
+            <p>TOTAL: USD 25</p>
+          </div>
+        </div>
+        <div class="item-outer" id="style-2">
+          <div class="item">
+            <div class="item-desc-container">
+              <div class="item-img">
+                <img src="../../../assets/img/imgTulipanes.png" height="100px" width="78px" alt="model1" />
+              </div>
+              <div class="item-details">
+                <div class="desc">
+                  <div class="item-title">
+                    <p>CALIDAD PREMIUM</p>
+                  </div>
+                  <p class="item-description">
+                    Bouquet de Tulipanes
+                  </p>
+                  <div class="qty">Qty: 1</div>
+                </div>
+                <div class="price-tag">
+                  <p>15</p>
 
                 </div>
               </div>
             </div>
-          </div>
-          <div class="shopping-action-area">
-            <div class="rmv-btn">
-              ELIMINAR
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-    <div class="price-area">
-      <div class="coupon-area">
-        <div class="coupon-head">
-          <p>CUPONES</p>
-        </div>
-        <div class="apply-coupon">
-          <div class="apply-coupon-left">
-            <img src="https://img.icons8.com/ios/50/000000/price-tag--v1.png" width="15px" height="15px"/>
-            <span class="discount-tag-head">APLICAR CUPONES</span>
-            <p class="discount-tag-subhead"><span class="discount-tag-subhead-login">Login</span> para ver cupones.</p>
-          </div>
-          <div class="apply-coupon-btn cursor-pointer">
-            APPLY <img width="15px" height="15px" src="../../../assets/icons/arrow-right.svg"/>
-          </div>
-        </div>
-      </div>
-      <div class="price-details">
-        <H4 class="brand-heading-font">DETALLES</H4>
-        <div class="excel-area">
-          <div class="mrp flex-custom pb-4">
-            <div class="mrp-tag text-gray">
-              <p>Total </p>
-            </div>
-            <div class="mrp-price bold-bright">
-              <p>{{symbol+' '+totalPrice}}</p>
-            </div>
-          </div>
-
-          <div class="bag-discount flex-custom pb-4">
-            <div class="bag-discount-tag text-gray">
-              <p>DESCUENTO</p>
-            </div>
-            <div class="bag-discount-price bold-bright">
-              <p>- {{symbol+' '+ 0}}</p>
-            </div>
-          </div>
-
-          <div class="subtotal flex-custom pb-4">
-            <div class="subtotal-tag text-gray">
-              <p>Sub Total</p>
-            </div>
-            <div class="subtotal-price bold-bright">
-              <p>{{symbol+' '+totalPrice}}</p>
-
-            </div>
-          </div>
-
-          <div class="discount flex-custom pb-4">
-            <div class="discount-tag text-gray">
-              <p>DESCUENTO</p>
-            </div>
-            <div class="discount-price bold-bright">
-              <p>{{symbol}} 0</p>
-            </div>
-          </div>
-
-          <div class="shipping flex-custom">
-            <div class="shipping-tag text-gray">
-              <p>COSTO DE ENTREGA</p>
-            </div>
-            <div class="shipping-price bold-bright">
-              <p>{{symbol}} 0</p>
-            </div>
-          </div>
-        </div>
-        <div class="total-amount flex-custom brand-heading-font">
-          <div class="total-amount-tag">
-            <p>TOTAL</p>
-          </div>
-          <div class="total-amount-price">
-            <p>{{symbol+' '+totalPrice}}</p>
-          </div>
-        </div>
-
-        <div class="select-address brand-heading-font cursor-pointer">
-          SELECCIONAR DIRECCION
-          <img src="../../../assets/icons/arrow-right-white.svg" width="15px" height="15px"/>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-</ng-template>
-
-
-<section *ngIf="dummyContent;else apiData">
-  <div class="shopping-cart-area">
-    <div class="bag-details">
-      <div>
-        <p>CARRITO DE COMPRAS (2 ITEMS)</p>
-      </div>
-      <div>
-        <p>TOTAL: USD 25</p>
-      </div>
-    </div>
-    <div class="item-outer" id="style-2">
-      <div class="item">
-        <div class="item-desc-container">
-          <div class="item-img">
-            <img
-              src="../../../assets/img/imgTulipanes.png"
-              height="100px"
-              width="78px"
-              alt="model1"
-            />
-          </div>
-          <div class="item-details">
-            <div class="desc">
-              <div class="item-title">
-                <p>CALIDAD PREMIUM</p>
+            <div class="shopping-action-area">
+              <div class="rmv-btn">
+                ELIMINAR
               </div>
-              <p class="item-description">
-                Bouquet de Tulipanes
+            </div>
+          </div>
+
+
+          <div class="item">
+            <div class="item-desc-container">
+              <div class="item-img">
+                <img src="../../../assets/img/imgTulipan.png" height="100px" width="78px" alt="model2" />
+              </div>
+              <div class="item-details">
+                <div class="desc">
+                  <div class="item-title">
+                    <p>CALIDAD NORMAL</p>
+                  </div>
+                  <p class="item-description">
+                    Bouquet de rosas fuera de temporada
+                  </p>
+                  <div class="qty">Qty: 1</div>
+                </div>
+                <div class="price-tag">
+                  <p>USD 15</p>
+                </div>
+              </div>
+            </div>
+            <div class="shopping-action-area">
+              <div class="rmv-btn">
+                ELIMINAR
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="price-area">
+        <div class="coupon-area">
+          <div class="coupon-head">
+            <p>CUPONES</p>
+          </div>
+          <div class="apply-coupon">
+            <div class="apply-coupon-left">
+              <img src="https://img.icons8.com/ios/50/000000/price-tag--v1.png" width="15px" height="15px" />
+              <span class="discount-tag-head">APLICAR CUPONES</span>
+              <p class="discount-tag-subhead"><span class="discount-tag-subhead-login">Login</span> para recibir
+                cupones.
               </p>
-              <div class="qty">Qty: 1</div>
             </div>
-            <div class="price-tag">
-              <p>15</p>
-
+            <div class="apply-coupon-btn cursor-pointer">
+              APPLY <img width="15px" height="15px" src="../../../assets/icons/arrow-right.svg" />
             </div>
           </div>
         </div>
-        <div class="shopping-action-area">
-          <div class="rmv-btn">
-            ELIMINAR
-          </div>
-        </div>
-      </div>
-
-
-      <div class="item">
-        <div class="item-desc-container">
-          <div class="item-img">
-            <img
-              src="../../../assets/img/imgTulipan.png"
-              height="100px"
-              width="78px"
-              alt="model2"
-            />
-          </div>
-          <div class="item-details">
-            <div class="desc">
-              <div class="item-title">
-                <p>CALIDAD NORMAL</p>
+        <div class="price-details">
+          <H4 class="brand-heading-font">DETALLES DE PRECIO</H4>
+          <div class="excel-area">
+            <div class="mrp flex-custom pb-4">
+              <div class="mrp-tag text-gray">
+                <p>Total</p>
               </div>
-              <p class="item-description">
-                Bouquet de rosas fuera de temporada
-              </p>
-              <div class="qty">Qty: 1</div>
+              <div class="mrp-price bold-bright">
+                <p>USD 25</p>
+              </div>
             </div>
-            <div class="price-tag">
-              <p>USD 15</p>
+
+            <div class="bag-discount flex-custom pb-4">
+              <div class="bag-discount-tag text-gray">
+                <p>DESCUENTO</p>
+              </div>
+              <div class="bag-discount-price bold-bright">
+                <p>USD 0</p>
+              </div>
+            </div>
+
+            <div class="subtotal flex-custom pb-4">
+              <div class="subtotal-tag text-gray">
+                <p>Sub Total</p>
+              </div>
+              <div class="subtotal-price bold-bright">
+                <p>USD 25</p>
+
+              </div>
+            </div>
+
+            <div class="discount flex-custom pb-4">
+              <div class="discount-tag text-gray">
+                <p>DESCUENTO</p>
+              </div>
+              <div class="discount-price bold-bright">
+                <p>USD 0</p>
+              </div>
+            </div>
+
+            <div class="shipping flex-custom">
+              <div class="shipping-tag text-gray">
+                <p>COSTO DE ENVIO</p>
+              </div>
+              <div class="shipping-price bold-bright">
+                <p>USD 0</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="shopping-action-area">
-          <div class="rmv-btn">
-            ELIMINAR
+          <div class="total-amount flex-custom brand-heading-font">
+            <div class="total-amount-tag">
+              <p>TOTAL</p>
+            </div>
+            <div class="total-amount-price">
+              <p>USD 25</p>
+            </div>
           </div>
 
+          <div class="select-address brand-heading-font">
+            SELECCIONAR DIRECCION
+            <img src="../../../assets/icons/arrow-right-white.svg" width="15px" height="15px" />
+
+          </div>
         </div>
+
       </div>
-    </div>
+    </section>
 
   </div>
-  <div class="price-area">
-    <div class="coupon-area">
-      <div class="coupon-head">
-        <p>CUPONES</p>
-      </div>
-      <div class="apply-coupon">
-        <div class="apply-coupon-left">
-          <img src="https://img.icons8.com/ios/50/000000/price-tag--v1.png" width="15px" height="15px"/>
-          <span class="discount-tag-head">APLICAR CUPONES</span>
-          <p class="discount-tag-subhead"><span class="discount-tag-subhead-login">Login</span> para recibir cupones.</p>
-        </div>
-        <div class="apply-coupon-btn cursor-pointer">
-          APPLY <img width="15px" height="15px" src="../../../assets/icons/arrow-right.svg"/>
-        </div>
-      </div>
-    </div>
-    <div class="price-details">
-      <H4 class="brand-heading-font">DETALLES DE PRECIO</H4>
-      <div class="excel-area">
-        <div class="mrp flex-custom pb-4">
-          <div class="mrp-tag text-gray">
-            <p>Total</p>
-          </div>
-          <div class="mrp-price bold-bright">
-            <p>USD 25</p>
-          </div>
-        </div>
-
-        <div class="bag-discount flex-custom pb-4">
-          <div class="bag-discount-tag text-gray">
-            <p>DESCUENTO</p>
-          </div>
-          <div class="bag-discount-price bold-bright">
-            <p>USD 0</p>
-          </div>
-        </div>
-
-        <div class="subtotal flex-custom pb-4">
-          <div class="subtotal-tag text-gray">
-            <p>Sub Total</p>
-          </div>
-          <div class="subtotal-price bold-bright">
-            <p>USD 25</p>
-
-          </div>
-        </div>
-
-        <div class="discount flex-custom pb-4">
-          <div class="discount-tag text-gray">
-            <p>DESCUENTO</p>
-          </div>
-          <div class="discount-price bold-bright">
-            <p>USD 0</p>
-          </div>
-        </div>
-
-        <div class="shipping flex-custom">
-          <div class="shipping-tag text-gray">
-            <p>COSTO DE ENVIO</p>
-          </div>
-          <div class="shipping-price bold-bright">
-            <p>USD 0</p>
-          </div>
-        </div>
-      </div>
-      <div class="total-amount flex-custom brand-heading-font">
-        <div class="total-amount-tag">
-          <p>TOTAL</p>
-        </div>
-        <div class="total-amount-price">
-          <p>USD 25</p>
-        </div>
-      </div>
-
-      <div class="select-address brand-heading-font">
-        SELECCIONAR DIRECCION
-        <img src="../../../assets/icons/arrow-right-white.svg" width="15px" height="15px"/>
-
-      </div>
-    </div>
-
-  </div>
- </section>
+</div>
