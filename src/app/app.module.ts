@@ -1,17 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< Updated upstream
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-=======
 import { CarritoComponent } from './pantallas/carrito/carrito.component';
 import { CatalogoComponent } from './pantallas/catalogo/catalogo.component';
 import { DetalleComponent } from './pantallas/detalle/detalle.component';
@@ -30,7 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations:[
+  declarations: [
     AppComponent,
     CarritoComponent,
     CatalogoComponent,
@@ -53,7 +45,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
->>>>>>> Stashed changes
+    FontAwesomeModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
