@@ -4,6 +4,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
+import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {MatCardModule} from "@angular/material/card";
   imports: [
     CommonModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    RouterLink
   ]
 })
 export class ProductsModule { }
