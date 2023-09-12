@@ -26,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {ProductsModule} from "./products/products.module";
+import {PostsModule} from "./posts/posts.module";
 import { environment } from 'src/environments/environment';
 
 
@@ -42,7 +43,7 @@ const app = initializeApp(environment.firebaseConfig);
     NosotrosComponent,
     CabeceraComponent,
     PiePaginaComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +62,7 @@ const app = initializeApp(environment.firebaseConfig);
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
+    PostsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

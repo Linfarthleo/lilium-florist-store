@@ -12,7 +12,7 @@ export class ProductDetailComponent implements OnInit {
 
   productName!: string;
   productImageUrl!: string;
-  productPrice!: string;
+  productPrice!: number;
 
   constructor(private productService: ProductService) {}
 
@@ -23,6 +23,7 @@ export class ProductDetailComponent implements OnInit {
         next: (data) => {
           this.productName = data.name;
           this.productImageUrl = data.sprites.front_default;
+          this.productPrice = data.price;
         },
       });
   }
