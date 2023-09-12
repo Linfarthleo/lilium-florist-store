@@ -9,7 +9,7 @@ describe('CarritoComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CarritoComponent]
-    });
+    }).compileComponents();
     fixture = TestBed.createComponent(CarritoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
