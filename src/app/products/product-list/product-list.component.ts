@@ -6,11 +6,12 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  pokemonIds: string[];
+ /* pokemonIds: string[];
 
   constructor(private productService: PokemonService) {}
-
+*/
   ngOnInit(): void {
+    /*
     this.pokemonService.getPokemonList().subscribe({
       next: (data) => {
         this.pokemonIds = [];
@@ -19,5 +20,7 @@ export class ProductListComponent implements OnInit {
         });
       },
     });
+    */
   }
+  
 }

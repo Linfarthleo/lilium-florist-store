@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,7 @@ import { NosotrosComponent } from './pantallas/nosotros/nosotros.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductListComponent } from './productos/product-list/product-list.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProductListComponent } from './productos/product-list/product-list.comp
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
