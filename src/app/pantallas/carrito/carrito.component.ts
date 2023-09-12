@@ -8,13 +8,13 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./carrito.component.scss']
 })
 export class CarritoComponent implements OnInit{
-  structor(private _cartService: CartService) { }
+  constructor(private _cartService: CartService) { }
 
   cartId = "CAR-204-1627042084"
-  cartContainer:Cart
+  cartContainer!:Cart
   totalPrice: number=0;
-  symbol: string;
-  
+  symbol!: string;
+
   dummyContent = true;
   ngOnInit(): void {
     this.getAllCartProducts()
@@ -42,10 +42,5 @@ export class CarritoComponent implements OnInit{
       }
     })
   }
-
-
-
-}
-
 
 }

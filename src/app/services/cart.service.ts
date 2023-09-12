@@ -1,6 +1,5 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CartModule } from '../includes/cart/cart.module';
 import { Cart } from '../models/cart.model';
 
 @Injectable({
