@@ -1,6 +1,6 @@
 import { Component , OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ImageLoaderService } from '../image-loader.service';
+import {ImageLoaderService} from "../../image-loader.service";
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-  
+
   ngOnInit(): void {
     this.loadLogo();
   }
