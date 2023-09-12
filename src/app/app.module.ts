@@ -5,7 +5,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { CarritoComponent } from './pantallas/carrito/carrito.component';
 import { CatalogoComponent } from './pantallas/catalogo/catalogo.component';
 import { DetalleComponent } from './pantallas/detalle/detalle.component';
 import { InicioComponent } from './pantallas/inicio/inicio.component';
@@ -21,18 +20,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {ProductsModule} from "./products/products.module";
+import {CarritoComponent} from "./pantallas/carrito/carrito.component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarritoComponent,
     CatalogoComponent,
     DetalleComponent,
     InicioComponent,
     NosotrosComponent,
     CabeceraComponent,
     PiePaginaComponent,
-    LoginComponent
+    LoginComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

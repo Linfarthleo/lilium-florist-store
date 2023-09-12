@@ -1,8 +1,13 @@
 <mat-card class="product-card">
-  <mat-card-header>
-    <mat-card-title>{{productName | titlecase}}</mat-card-title>
-  </mat-card-header>
+
   <img mat-card-image class="product-img" [src]="productImageUrl" [alt]="productName">
-  <mat-card-actions>
+  <mat-card-header>
+    <mat-card-title class="card-title">{{productName | titlecase}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p class="price-text">{{productPrice | currency}}</p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button type="button" class="btn btn-dark rounded-pill btn-lg mt-3">Añadir</button>
   </mat-card-actions>
 </mat-card>
