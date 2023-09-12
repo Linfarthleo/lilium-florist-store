@@ -12,6 +12,7 @@ export class ProductDetailComponent implements OnInit {
 
   productName!: string;
   productImageUrl!: string;
+  productPrice!: string;
 
   constructor(private productService: ProductService) {}
 
