@@ -8,21 +8,26 @@ import {ProductService} from "../../services/product.service";
 })
 export class ProductDetailComponent implements OnInit {
   @Input()
-  productDetail!: string;
+  productDetail!: number;
 
   productName!: string;
   productImageUrl!: string;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) {
+  }
 
   ngOnInit(): void {
-    this.productService
-      .getProductDetails(Number(this.productDetail))
-      .subscribe({
-        next: (data) => {
-          this.productName = data.name;
-          this.productImageUrl = data.sprites.front_default;
-        },
-      });
+    this.getFlowerDetails(this.productDetail);
   }
+
+  getFlowerDetails(id: number): void {
+    this.productService.getFlowerById(id).subscribe({
+      next: (data) => {
+        this.productName = data.nombreFlor;
+        this.productImageUrl = data.imagenFlor;
+      }
+    });
+  }
+
+
 }
