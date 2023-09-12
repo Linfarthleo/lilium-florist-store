@@ -13,6 +13,13 @@ import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './products/product-list/product-list.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,10 +31,20 @@ import { ProductListComponent } from './products/product-list/product-list.compo
     NosotrosComponent,
     CabeceraComponent,
     PiePaginaComponent,
-    ProductListComponent
+    ProductListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     FontAwesomeModule,
     AppRoutingModule,
     BrowserAnimationsModule
