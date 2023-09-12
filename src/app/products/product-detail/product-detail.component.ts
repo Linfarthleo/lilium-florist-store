@@ -12,6 +12,7 @@ export class ProductDetailComponent implements OnInit {
 
   productName!: string;
   productImageUrl!: string;
+  productPrice!: number;
 
   constructor(private productService: ProductService) {
   }
@@ -24,6 +25,7 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getFlowerById(id).subscribe({
       next: (data) => {
         this.productName = data.nombreFlor;
+        this.productPrice = data.precioFlor;
         this.productImageUrl = data.imagenFlor;
       }
     });
